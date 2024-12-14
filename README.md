@@ -187,7 +187,7 @@ result_df = transformData(keyword, file_path)
 loadIntoDeltaTable(result_df)
 ```
 ### Description of the data pipeline
-> **Note:** I wrote description of each function in docstring which you can find in [my github repository](https://github.com/LeeJihyun99/End-to-End-Data-Engineering-Project-with-Databricks).
+> **Note:** I wrote description of each function in docstring which you can find the scripts from this repository.
 
 ## Functions
 
