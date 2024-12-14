@@ -26,7 +26,7 @@ from pyspark.sql.functions import col, explode
 from pyspark.sql.functions import lit
 
 def extract_video_details_by_keyword(keyword, maxResults):
-    youtube = build('youtube', 'v3', developerKey='AIzaSyCHVzPc8wMUpSPpR6G33kp4D76_Hkqu0gI')
+    youtube = build('youtube', 'v3', developerKey='<your google api key>')
     request = youtube.search().list(
         q = keyword,
         order = "relevance",
