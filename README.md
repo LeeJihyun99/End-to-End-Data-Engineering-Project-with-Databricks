@@ -156,6 +156,29 @@ def loadIntoDeltaTable(result_df):
 
 ```
 
+### Create Delta Tables with Schemas
+Before executing the ETL script, you need to create the necessary Delta tables with predefined schemas to ensure data can be appended correctly. Here's how to create the tables:
+
+1. **Create the Delta Database** (if it doesn't already exist):
+   ```sql
+   %sql
+   CREATE DATABASE IF NOT EXISTS delta_tables;
+   ```
+2. You need to **create a table with the appropriate schema*** where your data will be stored. Use the following SQL command to create the youtube_video_results_by_keyword table in the delta_tables database:
+  ```sql
+   %sql
+CREATE TABLE IF NOT EXISTS delta_tables.youtube_video_results_by_keyword (
+  keyword STRING,
+  etag STRING,
+  nextPageToken STRING,
+  videoId STRING,
+  title STRING,
+  description STRING,
+  channelTitle STRING, 
+  publishedAt TIMESTAMP
+);
+  ```
+### Execute the script
 After setting up the script and making the necessary changes, you can execute the functions to run the ETL pipeline:
 ```python
 details = extract_video_details_by_keyword(keyword, maxResults)
